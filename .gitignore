@@ -1,0 +1,11 @@
+*.png
+*.PNG
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+gemini_generated_video_*.mp4
+Taylor Swift - The Fate o.mp3
+Thumbs.db
+desktop.ini
+.DS_Store
