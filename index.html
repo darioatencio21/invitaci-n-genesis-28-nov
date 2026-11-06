@@ -159,7 +159,8 @@
   #countdown{background:radial-gradient(ellipse at center,rgba(18,74,58,0.88),rgba(13,59,46,0.9));position:relative;overflow:hidden;}
   #countdown::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,162,75,.15) 1px,transparent 1px);background-size:32px 32px;animation:floatParticles 8s ease-in-out infinite;}
   @keyframes floatParticles{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-  .event-date{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.8vw,1.3rem);letter-spacing:.12em;text-transform:uppercase;margin:0 0 1.4rem;padding:0;font-weight:500;background:linear-gradient(135deg,#f4e9c9 0%,#c9a961 30%,#ffd98a 50%,#c9a961 70%,#f4e9c9 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:dateShine 3.5s ease-in-out infinite,dateFloat 5s ease-in-out infinite,dateGlow 3.5s ease-in-out infinite;text-align:center;position:relative;z-index:2;}
+  .event-date{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.6rem,6vw,2.6rem);letter-spacing:.04em;text-transform:none;margin:0 0 .35rem;padding:0;font-weight:600;background:linear-gradient(135deg,#f4e9c9 0%,#c9a961 30%,#ffd98a 50%,#c9a961 70%,#f4e9c9 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:dateShine 3.5s ease-in-out infinite,dateFloat 5s ease-in-out infinite,dateGlow 3.5s ease-in-out infinite;text-align:center;position:relative;z-index:2;}
+  .event-time{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(1.05rem,3.6vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;color:#7a2f45;margin:0 0 1.8rem;text-align:center;position:relative;z-index:2;text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.8);}
   @keyframes dateShine{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
   @keyframes dateFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);}}
   @keyframes dateGlow{0%,100%{filter:drop-shadow(0 2px 6px rgba(201,169,97,.35));}50%{filter:drop-shadow(0 2px 8px rgba(201,169,97,.55)) drop-shadow(0 0 14px rgba(255,228,150,.35));}}
@@ -530,6 +531,20 @@
   #welcome{background:transparent;color:#5a2a3a;}
   #welcome::before{background:radial-gradient(ellipse at center,rgba(255,250,246,.55),rgba(255,250,246,.12));}
   .welcome-name{background:linear-gradient(135deg,#a35a70 0%,#c98a9a 30%,#e8bcc8 50%,#c98a9a 70%,#a35a70 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 8px rgba(163,90,112,.3));animation:nameEntrance 1s ease-out .4s both,gradientShift 6s ease-in-out infinite;}
+  .welcome-title{display:flex;flex-direction:column;align-items:center;line-height:.95;margin:.2rem 0 .6rem;}
+  .welcome-title .welcome-name{font-size:clamp(3rem,13vw,5.4rem);margin:0;letter-spacing:.02em;background:linear-gradient(135deg,#4e1d2c 0%,#7a2f45 30%,#b0607a 50%,#7a2f45 70%,#4e1d2c 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 1px rgba(255,255,255,.95)) drop-shadow(0 0 10px rgba(255,255,255,.85)) drop-shadow(0 2px 6px rgba(74,29,44,.35));animation:nameEntrance 1s ease-out .4s both,gradientShift 6s ease-in-out infinite,titleGlow 3.2s ease-in-out infinite;}
+  .welcome-title .welcome-is{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,5vw,2.4rem);letter-spacing:.1em;margin:.06em 0;color:#6b2a3e;text-shadow:0 1px 0 rgba(255,255,255,.95),0 0 10px rgba(255,255,255,.9),0 2px 5px rgba(74,29,44,.28);animation:nameEntrance 1s ease-out .55s both;}
+  .welcome-title .welcome-turning{font-family:'Cormorant Garamond',serif;font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:clamp(1.6rem,6vw,2.8rem);background:linear-gradient(135deg,#4e1d2c 0%,#7a2f45 30%,#b0607a 50%,#7a2f45 70%,#4e1d2c 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 1px rgba(255,255,255,.95)) drop-shadow(0 0 10px rgba(255,255,255,.85)) drop-shadow(0 2px 6px rgba(74,29,44,.32));animation:nameEntrance 1s ease-out .7s both,gradientShift 6s ease-in-out infinite,titleGlow 3.2s ease-in-out infinite;}
+  @keyframes titleGlow{
+    0%,100%{filter:drop-shadow(0 1px 1px rgba(255,255,255,.9)) drop-shadow(0 0 8px rgba(255,255,255,.7)) drop-shadow(0 2px 5px rgba(74,29,44,.3));}
+    50%{filter:drop-shadow(0 1px 1px rgba(255,255,255,1)) drop-shadow(0 0 16px rgba(255,255,255,.95)) drop-shadow(0 3px 8px rgba(74,29,44,.45));}
+  }
+
+  /* Scroll hint */
+  .scroll-hint{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:45;display:flex;flex-direction:column;align-items:center;gap:4px;color:#a35a70;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;pointer-events:none;transition:opacity .4s ease,visibility .4s ease;text-shadow:0 1px 0 rgba(255,255,255,.85),0 0 10px rgba(255,255,255,.7);}
+  .scroll-hint svg{width:26px;height:26px;filter:drop-shadow(0 0 6px rgba(255,182,204,.8));animation:scrollBounce 1.6s ease-in-out infinite;}
+  .scroll-hint.is-hidden{opacity:0;visibility:hidden;}
+  @keyframes scrollBounce{0%,100%{transform:translateY(3px);opacity:.75;}50%{transform:translateY(-5px);opacity:1;}}
   .welcome-message{color:#6b3446;}
   .welcome-message p{text-shadow:none;}
   .welcome-message .signature{color:#b0607a;animation:none;}
@@ -537,7 +552,11 @@
 
   #countdown{background:transparent;}
   #countdown::before{background-image:radial-gradient(circle,rgba(201,138,154,.30) 1px,transparent 1px);}
-  .event-date{background:linear-gradient(135deg,#a35a70 0%,#c98a9a 30%,#e8bcc8 50%,#c98a9a 70%,#a35a70 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:dateFloat 5s ease-in-out infinite;}
+  .event-date{background:linear-gradient(135deg,#4e1d2c 0%,#7a2f45 30%,#b0607a 50%,#7a2f45 70%,#4e1d2c 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:dateShine 3.5s ease-in-out infinite,dateFloat 5s ease-in-out infinite,dateGlowPink 3.5s ease-in-out infinite;}
+  @keyframes dateGlowPink{
+    0%,100%{filter:drop-shadow(0 1px 1px rgba(255,255,255,.9)) drop-shadow(0 0 8px rgba(255,255,255,.7)) drop-shadow(0 2px 5px rgba(74,29,44,.3));}
+    50%{filter:drop-shadow(0 1px 1px rgba(255,255,255,1)) drop-shadow(0 0 16px rgba(255,255,255,.95)) drop-shadow(0 3px 8px rgba(74,29,44,.45));}
+  }
   .count-box{background:rgba(255,250,246,.8);border-color:#c98a9a;box-shadow:0 0 14px rgba(201,138,154,.2);}
   .count-num{color:#8c3a52;}
   .count-label{color:#b0607a;}
@@ -567,6 +586,13 @@
   .map-placeholder{color:#a35a70;background:radial-gradient(ellipse at center,rgba(249,227,233,.85),rgba(255,250,246,.9));}
   .map-btn{background:linear-gradient(135deg,#e8bcc8,#c98a9a 60%,#a35a70);color:#fff;box-shadow:0 8px 24px rgba(163,90,112,.3),inset 0 1px 0 rgba(255,255,255,.4);}
   .map-btn:hover{box-shadow:0 14px 32px rgba(163,90,112,.4),inset 0 1px 0 rgba(255,255,255,.5);}
+
+  /* Calendar buttons */
+  .calendar-label{font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;letter-spacing:.06em;color:#a35a70;margin:26px 0 12px;}
+  .calendar-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .calendar-btn{display:inline-block;padding:12px 26px;border-radius:999px;border:1.5px solid #c98a9a;background:#fff8f2;color:#a35a70;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;-webkit-tap-highlight-color:transparent;}
+  .calendar-btn:hover{transform:translateY(-2px);background:#fff;box-shadow:0 10px 24px rgba(163,90,112,.25);}
+  .calendar-btn:active{transform:scale(.97);}
   .gallery-cell{border-color:rgba(201,138,154,.55);box-shadow:0 8px 24px rgba(163,90,112,.18);}
   .gallery-cell:hover{box-shadow:0 12px 32px rgba(163,90,112,.26);}
   .gallery-placeholder{background:#f9e3e9;}
@@ -615,16 +641,24 @@
 <div id="main-site">
 
   <button type="button" class="lang-plaque lang-toggle--site" id="lang-plaque" aria-label="Cambiar idioma / Change language" title="Español / English">
-    <span class="lang-plaque-label" id="lang-plaque-label">English</span>
+    <span class="lang-plaque-label" id="lang-plaque-label">Español</span>
   </button>
+
+  <div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+    <span data-i18n="scroll_hint">Swipe up</span>
+  </div>
 
   <!-- Welcome -->
   <section id="welcome" class="dark">
     <div class="welcome-particles" id="welcome-particles"></div>
     <div class="section-inner">
       <div class="welcome-stack">
-        <span class="eyebrow subtitle" data-i18n="turning_ten">Cumpliendo Once</span>
-        <h2 class="script welcome-name" id="welcome-name">Genesis</h2>
+        <h2 class="welcome-title">
+          <span class="script welcome-name" id="welcome-name">Genesis</span>
+          <span class="welcome-is" data-i18n="title_is">is</span>
+          <span class="welcome-turning" data-i18n="title_turning">turning eleven</span>
+        </h2>
 
         <img src="marco con foto.webp" alt="Foto de Genesis" class="welcome-photo" loading="lazy" decoding="async">
 
@@ -640,7 +674,8 @@
   <!-- Countdown -->
   <section id="countdown">
     <div class="section-inner reveal">
-      <div class="event-date" id="event-date" data-i18n="event_date">Sábado, 28 de Noviembre de 2026</div>
+      <div class="event-date" id="event-date" data-i18n="event_date">November 28, 2026</div>
+      <div class="event-time" id="event-time" data-i18n="event_time">Starts at 1:00 PM</div>
       <div class="countdown-title-row">
         <div class="countdown-star-wrap">
           <div class="countdown-star">
@@ -688,16 +723,21 @@
           <div class="count-dot"></div>
         </div>
       </div>
+      <p class="calendar-label" data-i18n="add_to_calendar">Add to Calendar</p>
+      <div class="calendar-actions">
+        <button type="button" class="calendar-btn js-gcal" data-i18n="google_calendar">Google Calendar</button>
+        <button type="button" class="calendar-btn js-ical" data-i18n="apple_calendar">Apple Calendar</button>
+      </div>
     </div>
   </section>
 
   <!-- Details -->
   <section id="details" class="details-section">
     <div class="details-inner reveal">
-      <div class="details-kicker" data-i18n="details_kicker">THE DETAIL</div>
+      <div class="details-kicker" data-i18n="details_kicker">THE DETAILS</div>
       <h2 class="details-title" data-i18n="details_title">Date, Time &amp; Place</h2>
       <div class="dress-float">
-        <img src="castillo.webp" alt="Decoración de cumpleaños" loading="lazy" decoding="async" width="320" height="320">
+        <img src="Cerezas brillantes con lazo rosa satinado.webp" alt="Cerezas brillantes con lazo rosa satinado" loading="lazy" decoding="async" width="320" height="320">
         <div class="dress-sparkles" id="dress-sparkles" aria-hidden="true"></div>
       </div>
       <p class="details-address" id="venue-address">3709 Rosedale Hwy, Bakersfield, CA 93308</p>
@@ -709,6 +749,11 @@
         </div>
       </div>
       <a class="map-btn" id="map-btn" href="#" target="_blank" rel="noopener noreferrer" data-i18n="get_directions" style="display:none;">Get Directions</a>
+      <p class="calendar-label" data-i18n="add_to_calendar">Add to Calendar</p>
+      <div class="calendar-actions">
+        <button type="button" class="calendar-btn js-gcal" data-i18n="google_calendar">Google Calendar</button>
+        <button type="button" class="calendar-btn js-ical" data-i18n="apple_calendar">Apple Calendar</button>
+      </div>
     </div>
   </section>
 
@@ -738,9 +783,10 @@
     fullName: "Genesis",
     age: 11,
     monogram: "G",
-    eventDateISO: "2026-11-28T17:00:00",
-    dateDisplay: "Sábado, 28 de Noviembre de 2026",
-    timeDisplay: "5:00 PM",
+    eventDateISO: "2026-11-28T13:00:00",
+    eventEndISO: "2026-11-28T17:00:00",
+    dateDisplay: "November 28, 2026",
+    timeDisplay: "1:00 PM",
     venueName: "",
     venueAddress: "3709 Rosedale Hwy, Bakersfield, CA 93308",
     mapQuery: "3709 Rosedale Hwy, Bakersfield, CA 93308",
@@ -760,15 +806,24 @@
       turning_ten: "Turning Eleven",
       welcome_msg_text: "With great joy we invite you to celebrate the first 11 years of our daughter Genesis. We want to share with you an afternoon full of games, laughter and moments we will keep forever. Your presence is the best gift. We can't wait to see you!",
       welcome_signature: "With love, the family of {name}",
-      event_date: "Saturday, November 28, 2026",
+      event_date: "November 28, 2026",
+      event_time: "Starts at 1:00 PM",
+      title_is: "is",
+      title_turning: "turning eleven",
+      scroll_hint: "Swipe up",
       countdown_eyebrow: "COUNTING DOWN TO THE CELEBRATION",
       days: "DAYS",
       hours: "HOURS",
       minutes: "MINUTES",
       seconds: "SECONDS",
-      details_kicker: "THE DETAIL",
+      details_kicker: "THE DETAILS",
       details_title: "Date, Time & Place",
       get_directions: "Get Directions",
+      add_to_calendar: "Add to Calendar",
+      google_calendar: "Google Calendar",
+      apple_calendar: "Apple Calendar",
+      calendar_event_title: "Genesis · 11th Birthday",
+      calendar_event_details: "Join us to celebrate Genesis' 11th birthday!",
       map_placeholder: "Location to be confirmed",
       program_kicker: "THE PROGRAM",
       program_title: "Event Timeline",
@@ -791,7 +846,11 @@
       turning_ten: "Cumpliendo Once",
       welcome_msg_text: "Con mucha alegría te invitamos a celebrar los primeros 11 años de nuestra hija Genesis. Queremos compartir contigo una tarde llena de juegos, risas y momentos que guardaremos por siempre. Tu presencia es el mejor regalo. ¡Te esperamos!",
       welcome_signature: "Con cariño, la familia de {name}",
-      event_date: "Sábado, 28 de Noviembre de 2026",
+      event_date: "28 de Noviembre, 2026",
+      event_time: "Comienza a la 1:00 PM",
+      title_is: "está",
+      title_turning: "cumpliendo once",
+      scroll_hint: "Desliza hacia arriba",
       countdown_eyebrow: "CUENTA REGRESIVA PARA LA CELEBRACIÓN",
       days: "DÍAS",
       hours: "HORAS",
@@ -800,6 +859,11 @@
       details_kicker: "LOS DETALLES",
       details_title: "Fecha, Hora y Lugar",
       get_directions: "Cómo Llegar",
+      add_to_calendar: "Agregar al Calendario",
+      google_calendar: "Google Calendar",
+      apple_calendar: "Apple Calendar",
+      calendar_event_title: "Genesis · Mis 11 Años",
+      calendar_event_details: "¡Acompáñanos a celebrar los 11 años de Genesis!",
       map_placeholder: "Ubicación por confirmar",
       program_kicker: "EL PROGRAMA",
       program_title: "Itinerario",
@@ -829,7 +893,7 @@
     var langLabel = document.getElementById('lang-plaque-label');
     var langPlaqueEl = document.getElementById('lang-plaque');
     if(langLabel){
-      var langName = lang === 'es' ? 'Español' : 'English';
+      var langName = lang === 'es' ? 'English' : 'Español';
       langLabel.textContent = langName;
       if(langPlaqueEl){ langPlaqueEl.title = langName; }
     }
@@ -922,6 +986,81 @@
     mapWrap.innerHTML = '<iframe src="https://maps.google.com/maps?q=' + mapQ + '&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
     mapBtn.href = 'https://www.google.com/maps/search/?api=1&query=' + mapQ;
     mapBtn.style.display = 'inline-block';
+  }
+
+  /* Add to calendar */
+  function getEventDates(){
+    var start = new Date(CONFIG.eventDateISO);
+    var end = CONFIG.eventEndISO ? new Date(CONFIG.eventEndISO) : new Date(start.getTime() + 4*3600000);
+    return { start: start, end: end };
+  }
+  function formatCalDate(date){
+    return date.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  }
+  function buildGoogleCalendarUrl(){
+    var d = getEventDates();
+    var params = [
+      'action=TEMPLATE',
+      'text=' + encodeURIComponent(t('calendar_event_title')),
+      'dates=' + formatCalDate(d.start) + '/' + formatCalDate(d.end),
+      'details=' + encodeURIComponent(t('calendar_event_details')),
+      'location=' + encodeURIComponent(CONFIG.venueAddress || '')
+    ];
+    return 'https://calendar.google.com/calendar/render?' + params.join('&');
+  }
+  function buildIcsContent(){
+    var d = getEventDates();
+    var lines = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Genesis 11//EN',
+      'CALSCALE:GREGORIAN',
+      'BEGIN:VEVENT',
+      'UID:genesis-11-' + d.start.getTime() + '@invitation',
+      'DTSTAMP:' + formatCalDate(new Date()),
+      'DTSTART:' + formatCalDate(d.start),
+      'DTEND:' + formatCalDate(d.end),
+      'SUMMARY:' + t('calendar_event_title'),
+      'DESCRIPTION:' + t('calendar_event_details'),
+      'LOCATION:' + (CONFIG.venueAddress || ''),
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ];
+    return lines.join('\r\n');
+  }
+  function downloadIcs(){
+    var blob = new Blob([buildIcsContent()], {type:'text/calendar;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'genesis-11-birthday.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }
+  document.querySelectorAll('.js-gcal').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.open(buildGoogleCalendarUrl(), '_blank');
+    });
+  });
+  document.querySelectorAll('.js-ical').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      downloadIcs();
+    });
+  });
+
+  /* Scroll hint */
+  var scrollHint = document.getElementById('scroll-hint');
+  if(scrollHint){
+    var updateScrollHint = function(){
+      if(window.scrollY > 40){ scrollHint.classList.add('is-hidden'); }
+      else { scrollHint.classList.remove('is-hidden'); }
+    };
+    window.addEventListener('scroll', updateScrollHint, {passive:true});
+    updateScrollHint();
   }
 
   /* Video intro — sound button unmutes video audio, Skip/ended transitions to site */
