@@ -4,6 +4,8 @@
 *.jpeg
 *.JPG
 *.JPEG
+!favicon.png
+!apple-touch-icon.png
 gemini_generated_video_*.mp4
 Taylor Swift - The Fate o.mp3
 Thumbs.db
