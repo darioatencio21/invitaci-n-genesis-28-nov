@@ -106,8 +106,8 @@
     50%{background-position:100% 50%;}
   }
   .eyebrow.subtitle{animation:subtitleFade .9s ease-out .15s both;}
-  .welcome-photo{width:min(320px,80vw);height:auto;margin:16px auto 0;display:block;border:none;background:transparent;padding:0;animation:subtitleFade 1s ease-out .3s both;}
-  @media(min-width:600px){.welcome-photo{width:min(420px,60vw);}}
+  .welcome-photo{width:min(480px,94vw);height:auto;margin:16px auto 0;display:block;border:none;background:transparent;padding:0;animation:subtitleFade 1s ease-out .3s both;}
+  @media(min-width:600px){.welcome-photo{width:min(680px,80vw);}}
   .welcome-bfly{width:clamp(40px,8vw,56px);height:auto;display:block;margin:0 auto 10px;filter:drop-shadow(0 0 6px rgba(255,228,150,.4)) drop-shadow(0 0 12px rgba(201,162,75,.25));animation:welcomeBflyFloat 4s ease-in-out infinite,welcomeBflyGlow 3.5s ease-in-out infinite;}
   @keyframes welcomeBflyFloat{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-5px) rotate(4deg);}}
   @keyframes welcomeBflyGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(255,228,150,.4)) drop-shadow(0 0 12px rgba(201,162,75,.25));}50%{filter:drop-shadow(0 0 10px rgba(255,228,150,.6)) drop-shadow(0 0 18px rgba(201,162,75,.35));}}
@@ -604,6 +604,8 @@
   .lightbox{background:rgba(90,42,58,.94);}
   .lightbox img{border-color:rgba(201,138,154,.6);}
   .lightbox-counter{color:#d8a2b0;}
+  .lightbox-btn,.lightbox-close{border-color:rgba(201,138,154,.6);background:rgba(90,42,58,.6);color:#ffe3ec;}
+  .lightbox-btn:hover,.lightbox-close:hover{background:rgba(90,42,58,.9);}
 
   footer{position:relative;z-index:2;background:linear-gradient(180deg,rgba(255,250,246,.3),rgba(255,250,246,.6));color:#b0607a;}
   footer .sign{color:#8c3a52;text-shadow:none;}
@@ -663,11 +665,11 @@
           <span class="welcome-turning" data-i18n="title_turning">turning eleven</span>
         </h2>
 
-        <img src="marco con foto.webp" alt="Foto de Genesis" class="welcome-photo" loading="lazy" decoding="async">
+        <img src="imagenes/imagen_original_sin_fondo.webp" alt="Foto de Genesis" class="welcome-photo" loading="lazy" decoding="async">
 
         <!-- Personal message below the frame -->
         <div class="welcome-message">
-          <p id="welcome-msg-text" data-i18n="welcome_msg_text">Con mucha alegría te invitamos a celebrar los primeros 11 años de nuestra hija Genesis. Queremos compartir contigo una tarde llena de juegos, risas y momentos que guardaremos por siempre. Tu presencia es el mejor regalo. ¡Te esperamos!</p>
+          <p id="welcome-msg-text" data-i18n="welcome_msg_text">I'm so excited for my birthday, and it would make me really happy to celebrate this special day with you! I hope you can come and share lots of fun, laughter, and sweet memories with me!</p>
           <span class="signature"><i class="heart"></i><span id="welcome-signature-text">Con cariño, la familia de Genesis</span></span>
         </div>
       </div>
@@ -768,6 +770,14 @@
     </div>
   </section>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de fotos">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
+    <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+    <img id="lightbox-img" alt="">
+    <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
   <footer id="site-footer">
     <p class="sign" data-i18n="footer_sign" style="font-family:'Playfair Display',serif;font-style:italic;letter-spacing:.05em;">Con amor, Genesis &amp; Familia</p>
     <p data-i18n="footer_note" style="font-family:'Playfair Display',serif;font-style:italic;opacity:.85;">¡No vemos la hora de celebrar contigo!</p>
@@ -796,7 +806,12 @@
     introVideoUrl: "video nuevo.mp4",
     musicUrl: "musica.mp3",
     heroPhoto: "drive-download-20260804T135852Z-1-001/IMAGEN DE INICIO DE MOSTRACIÓN DE INVITACIÓN.webp",
-    galleryPhotos: []
+    galleryPhotos: [
+      "imagenes/Edit15.webp",
+      "imagenes/Edit20.webp",
+      "imagenes/Edit22.webp",
+      "imagenes/Edit23.webp"
+    ]
   };
 
   const translations = {
@@ -807,7 +822,7 @@
       open_invitation: "Open Invitation",
       intro_sub: "Mis 11 Años",
       turning_ten: "Turning Eleven",
-      welcome_msg_text: "With great joy we invite you to celebrate the first 11 years of our daughter Genesis. We want to share with you an afternoon full of games, laughter and moments we will keep forever. Your presence is the best gift. We can't wait to see you!",
+      welcome_msg_text: "I'm so excited for my birthday, and it would make me really happy to celebrate this special day with you! I hope you can come and share lots of fun, laughter, and sweet memories with me!",
       welcome_signature: "With love, the family of {name}",
       event_date: "November 28, 2026",
       event_time: "Starts at 1:00 PM",
@@ -847,7 +862,7 @@
       open_invitation: "Abrir Invitación",
       intro_sub: "Mis 11 Años",
       turning_ten: "Cumpliendo Once",
-      welcome_msg_text: "Con mucha alegría te invitamos a celebrar los primeros 11 años de nuestra hija Genesis. Queremos compartir contigo una tarde llena de juegos, risas y momentos que guardaremos por siempre. Tu presencia es el mejor regalo. ¡Te esperamos!",
+      welcome_msg_text: "¡Estoy muy emocionada por mi cumpleaños y me haría muy feliz celebrar este día tan especial contigo! ¡Espero que puedas venir y compartir conmigo mucha diversión, risas y dulces recuerdos!",
       welcome_signature: "Con cariño, la familia de {name}",
       event_date: "28 de Noviembre, 2026",
       event_time: "Comienza a la 1:00 PM",
@@ -914,27 +929,84 @@
   applyTranslations();
   document.getElementById('welcome-name').textContent = CONFIG.fullName;
 
+  var galleryPhotos = CONFIG.galleryPhotos || [];
   var galleryGrid = document.getElementById('gallery-grid');
   if(galleryGrid){
-    var galleryPhotos = CONFIG.galleryPhotos || [];
-    for(var gi=0; gi<4; gi++){
+    for(var gi=0; gi<galleryPhotos.length; gi++){
       var galleryCell = document.createElement('div');
       galleryCell.className = 'gallery-cell';
-      if(galleryPhotos[gi]){
-        var galleryImg = document.createElement('img');
-        galleryImg.src = galleryPhotos[gi];
-        galleryImg.alt = 'Genesis ' + (gi + 1);
-        galleryImg.loading = 'lazy';
-        galleryImg.decoding = 'async';
-        galleryCell.appendChild(galleryImg);
-      } else {
-        var galleryPh = document.createElement('div');
-        galleryPh.className = 'gallery-placeholder';
-        galleryPh.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.5 9 2 5.5 5.5 5.5c2 0 3.5 1.1 4.5 2.6 1-1.5 2.5-2.6 4.5-2.6C18 5.5 19.5 9 21.5 12.5 19 16.65 12 21 12 21z"/></svg>';
-        galleryCell.appendChild(galleryPh);
-      }
+      var galleryImg = document.createElement('img');
+      galleryImg.src = galleryPhotos[gi];
+      galleryImg.alt = 'Genesis ' + (gi + 1);
+      galleryImg.loading = 'lazy';
+      galleryImg.decoding = 'async';
+      galleryCell.appendChild(galleryImg);
+      galleryCell.addEventListener('click', (function(idx){
+        return function(){ openLightbox(idx); };
+      })(gi));
       galleryGrid.appendChild(galleryCell);
     }
+  }
+
+  /* Gallery lightbox */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCounter = document.getElementById('lightbox-counter');
+  var lightboxClose = document.getElementById('lightbox-close');
+  var lightboxPrev = document.getElementById('lightbox-prev');
+  var lightboxNext = document.getElementById('lightbox-next');
+  var lightboxIndex = 0;
+
+  function updateLightbox(){
+    if(!galleryPhotos.length) return;
+    lightboxIndex = (lightboxIndex + galleryPhotos.length) % galleryPhotos.length;
+    lightboxImg.src = galleryPhotos[lightboxIndex];
+    lightboxImg.alt = 'Genesis ' + (lightboxIndex + 1);
+    lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + galleryPhotos.length;
+    var single = galleryPhotos.length <= 1;
+    lightboxPrev.style.display = single ? 'none' : 'flex';
+    lightboxNext.style.display = single ? 'none' : 'flex';
+  }
+  function openLightbox(index){
+    if(!lightbox || !galleryPhotos.length) return;
+    lightboxIndex = index;
+    updateLightbox();
+    lightbox.classList.add('open');
+    document.body.classList.add('locked');
+  }
+  function closeLightbox(){
+    if(!lightbox) return;
+    lightbox.classList.remove('open');
+    document.body.classList.remove('locked');
+  }
+  function stepLightbox(delta){
+    if(!lightbox || !galleryPhotos.length) return;
+    lightboxIndex += delta;
+    updateLightbox();
+  }
+  if(lightbox){
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', function(e){ e.stopPropagation(); stepLightbox(-1); });
+    lightboxNext.addEventListener('click', function(e){ e.stopPropagation(); stepLightbox(1); });
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox){ closeLightbox(); }
+    });
+    var lightboxTouchX = null;
+    lightbox.addEventListener('touchstart', function(e){
+      lightboxTouchX = e.changedTouches[0].clientX;
+    }, {passive:true});
+    lightbox.addEventListener('touchend', function(e){
+      if(lightboxTouchX === null) return;
+      var dx = e.changedTouches[0].clientX - lightboxTouchX;
+      if(Math.abs(dx) > 40){ stepLightbox(dx < 0 ? 1 : -1); }
+      lightboxTouchX = null;
+    }, {passive:true});
+    document.addEventListener('keydown', function(e){
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'Escape'){ closeLightbox(); }
+      else if(e.key === 'ArrowLeft'){ stepLightbox(-1); }
+      else if(e.key === 'ArrowRight'){ stepLightbox(1); }
+    });
   }
 
   document.querySelectorAll('img').forEach(function(img){
