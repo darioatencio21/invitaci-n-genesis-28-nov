@@ -160,7 +160,9 @@
   #countdown::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,162,75,.15) 1px,transparent 1px);background-size:32px 32px;animation:floatParticles 8s ease-in-out infinite;}
   @keyframes floatParticles{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .event-date{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.6rem,6vw,2.6rem);letter-spacing:.04em;text-transform:none;margin:0 0 .35rem;padding:0;font-weight:600;background:linear-gradient(135deg,#f4e9c9 0%,#c9a961 30%,#ffd98a 50%,#c9a961 70%,#f4e9c9 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:dateShine 3.5s ease-in-out infinite,dateFloat 5s ease-in-out infinite,dateGlow 3.5s ease-in-out infinite;text-align:center;position:relative;z-index:2;}
-  .event-time{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(1.05rem,3.6vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;color:#7a2f45;margin:0 0 1.8rem;text-align:center;position:relative;z-index:2;text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.8);}
+  .event-time{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(1.05rem,3.6vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;color:#7a2f45;margin:0 0 .2rem;text-align:center;position:relative;z-index:2;text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.8);}
+  .event-venue{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(1rem,3.4vw,1.4rem);letter-spacing:.12em;text-transform:uppercase;color:#8c3a52;margin:0;text-align:center;position:relative;z-index:2;text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.8);}
+  .event-hours{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,3.2vw,1.25rem);letter-spacing:.04em;color:#a35a70;margin:.15rem 0 1.8rem;text-align:center;position:relative;z-index:2;text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.8);}
   @keyframes dateShine{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
   @keyframes dateFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);}}
   @keyframes dateGlow{0%,100%{filter:drop-shadow(0 2px 6px rgba(201,169,97,.35));}50%{filter:drop-shadow(0 2px 8px rgba(201,169,97,.55)) drop-shadow(0 0 14px rgba(255,228,150,.35));}}
@@ -541,8 +543,8 @@
   }
 
   /* Scroll hint */
-  .scroll-hint{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:45;display:flex;flex-direction:column;align-items:center;gap:4px;color:#a35a70;font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;pointer-events:none;transition:opacity .4s ease,visibility .4s ease;text-shadow:0 1px 0 rgba(255,255,255,.85),0 0 10px rgba(255,255,255,.7);}
-  .scroll-hint svg{width:26px;height:26px;filter:drop-shadow(0 0 6px rgba(255,182,204,.8));animation:scrollBounce 1.6s ease-in-out infinite;}
+  .scroll-hint{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:45;display:flex;flex-direction:column;align-items:center;gap:4px;color:#7a1f3d;font-family:'Cormorant Garamond',serif;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;pointer-events:none;transition:opacity .4s ease,visibility .4s ease;text-shadow:0 1px 2px rgba(74,29,44,.35);}
+  .scroll-hint svg{width:26px;height:26px;color:#7a1f3d;filter:drop-shadow(0 1px 2px rgba(74,29,44,.35));animation:scrollBounce 1.6s ease-in-out infinite;}
   .scroll-hint.is-hidden{opacity:0;visibility:hidden;}
   @keyframes scrollBounce{0%,100%{transform:translateY(3px);opacity:.75;}50%{transform:translateY(-5px);opacity:1;}}
   .welcome-message{color:#6b3446;}
@@ -665,12 +667,12 @@
           <span class="welcome-turning" data-i18n="title_turning">turning eleven</span>
         </h2>
 
-        <img src="imagenes/imagen_original_sin_fondo.webp" alt="Foto de Genesis" class="welcome-photo" loading="lazy" decoding="async">
+        <img src="imagenes/imagen_sin_fondo.webp" alt="Foto de Genesis" class="welcome-photo" loading="lazy" decoding="async">
 
         <!-- Personal message below the frame -->
         <div class="welcome-message">
           <p id="welcome-msg-text" data-i18n="welcome_msg_text">I'm so excited for my birthday, and it would make me really happy to celebrate this special day with you! I hope you can come and share lots of fun, laughter, and sweet memories with me!</p>
-          <span class="signature"><i class="heart"></i><span id="welcome-signature-text">Con cariño, la familia de Genesis</span></span>
+          <span class="signature"><i class="heart"></i><span id="welcome-signature-text">With love, Genesis</span></span>
         </div>
       </div>
     </div>
@@ -681,6 +683,8 @@
     <div class="section-inner reveal">
       <div class="event-date" id="event-date" data-i18n="event_date">November 28, 2026</div>
       <div class="event-time" id="event-time" data-i18n="event_time">Starts at 1:00 PM</div>
+      <div class="event-venue" id="event-venue" data-i18n="event_venue">Private Party Room</div>
+      <div class="event-hours" id="event-hours" data-i18n="event_hours">1:00 PM to 2:30 PM</div>
       <div class="countdown-title-row">
         <div class="countdown-star-wrap">
           <div class="countdown-star">
@@ -740,7 +744,7 @@
   <section id="details" class="details-section">
     <div class="details-inner reveal">
       <div class="details-kicker" data-i18n="details_kicker">THE DETAILS</div>
-      <h2 class="details-title" data-i18n="details_title">Date, Time &amp; Place</h2>
+      <h2 class="details-title" data-i18n="details_title">Place</h2>
       <div class="dress-float">
         <img src="Cerezas brillantes con lazo rosa satinado.webp" alt="Cerezas brillantes con lazo rosa satinado" loading="lazy" decoding="async" width="320" height="320">
         <div class="dress-sparkles" id="dress-sparkles" aria-hidden="true"></div>
@@ -797,7 +801,7 @@
     age: 11,
     monogram: "G",
     eventDateISO: "2026-11-28T13:00:00",
-    eventEndISO: "2026-11-28T17:00:00",
+    eventEndISO: "2026-11-28T14:30:00",
     dateDisplay: "November 28, 2026",
     timeDisplay: "1:00 PM",
     venueName: "",
@@ -810,7 +814,7 @@
       "imagenes/Edit15.webp",
       "imagenes/Edit20.webp",
       "imagenes/Edit22.webp",
-      "imagenes/Edit23.webp"
+      "imagenes/Edit9.webp"
     ]
   };
 
@@ -823,9 +827,11 @@
       intro_sub: "Mis 11 Años",
       turning_ten: "Turning Eleven",
       welcome_msg_text: "I'm so excited for my birthday, and it would make me really happy to celebrate this special day with you! I hope you can come and share lots of fun, laughter, and sweet memories with me!",
-      welcome_signature: "With love, the family of {name}",
+      welcome_signature: "With love, {name}",
       event_date: "November 28, 2026",
       event_time: "Starts at 1:00 PM",
+      event_venue: "Private Party Room",
+      event_hours: "1:00 PM to 2:30 PM",
       title_is: "is",
       title_turning: "turning eleven",
       scroll_hint: "Swipe up",
@@ -835,7 +841,7 @@
       minutes: "MINUTES",
       seconds: "SECONDS",
       details_kicker: "THE DETAILS",
-      details_title: "Date, Time & Place",
+      details_title: "Place",
       get_directions: "Get Directions",
       add_to_calendar: "Add to Calendar",
       google_calendar: "Google Calendar",
@@ -863,9 +869,11 @@
       intro_sub: "Mis 11 Años",
       turning_ten: "Cumpliendo Once",
       welcome_msg_text: "¡Estoy muy emocionada por mi cumpleaños y me haría muy feliz celebrar este día tan especial contigo! ¡Espero que puedas venir y compartir conmigo mucha diversión, risas y dulces recuerdos!",
-      welcome_signature: "Con cariño, la familia de {name}",
+      welcome_signature: "Con cariño, {name}",
       event_date: "28 de Noviembre, 2026",
       event_time: "Comienza a la 1:00 PM",
+      event_venue: "Salón Privado de Fiestas",
+      event_hours: "1:00 PM a 2:30 PM",
       title_is: "está",
       title_turning: "cumpliendo once",
       scroll_hint: "Desliza hacia arriba",
@@ -875,7 +883,7 @@
       minutes: "MINUTOS",
       seconds: "SEGUNDOS",
       details_kicker: "LOS DETALLES",
-      details_title: "Fecha, Hora y Lugar",
+      details_title: "Lugar",
       get_directions: "Cómo Llegar",
       add_to_calendar: "Agregar al Calendario",
       google_calendar: "Google Calendar",
