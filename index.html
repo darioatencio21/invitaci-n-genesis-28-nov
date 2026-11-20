@@ -1069,7 +1069,7 @@
   if(CONFIG.venueAddress && CONFIG.venueAddress.trim()){
     venueAddressEl.textContent = CONFIG.venueAddress;
     var mapQ = encodeURIComponent(CONFIG.mapQuery || CONFIG.venueAddress);
-    mapWrap.innerHTML = '<iframe src="https://maps.google.com/maps?q=' + mapQ + '&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+    mapWrap.innerHTML = '<iframe title="Mapa del lugar" src="https://www.google.com/maps?q=' + mapQ + '&z=16&output=embed" width="100%" height="300" style="border:0;display:block" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>';
     mapBtn.href = 'https://www.google.com/maps/search/?api=1&query=' + mapQ;
     mapBtn.style.display = 'inline-block';
   }
@@ -1177,7 +1177,15 @@
     transitionDone = true;
     envelopeScreen.classList.add('leaving');
     if(introVideo && !introVideo.paused) introVideo.pause();
-    setTimeout(function(){ mainSite.classList.add('show'); }, 500);
+    setTimeout(function(){
+      mainSite.classList.add('show');
+      setTimeout(function(){
+        document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+          var r = el.getBoundingClientRect();
+          if(r.top < window.innerHeight + 40 && r.bottom > -40){ el.classList.add('visible'); }
+        });
+      }, 300);
+    }, 500);
     setTimeout(function(){ envelopeScreen.style.display='none'; }, 1400);
     if(CONFIG.musicUrl && audio){
       audio.querySelector('source').src = CONFIG.musicUrl;
@@ -1441,7 +1449,7 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, {threshold: 0.15, rootMargin: '0px 0px -50px 0px'});
+    }, {threshold: 0.1, rootMargin: '0px 0px 0px 0px'});
     document.querySelectorAll('.reveal').forEach(function(el){
       revealObserver.observe(el);
     });
